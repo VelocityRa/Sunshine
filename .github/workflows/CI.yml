@@ -49,6 +49,7 @@ jobs:
 
       - name: Setup Release
         id: setup_release
+        if: github.event_name == 'push'  # Only run on push events
         uses: LizardByte/setup-release-action@v2025.426.225
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
